@@ -1,0 +1,230 @@
+module DP
+ {
+    imports
+    {
+        Base,
+    }
+
+	/************************Items************************/
+	item Rubber
+	{
+		Weight    		 	= 0.1,
+        Type    		 	= Normal,
+        DisplayName 	 	= Rubber,
+        Icon    		 	= Rubber,
+	}
+
+	item TireMag
+	{
+		DisplayCategory 	= SkillBook,
+		Weight 			 	= 0.1,
+		Type 			 	= Literature,
+		DisplayName 	 	= How to Assemble Tires,
+		Icon 			 	= TireMag,
+		TeachedRecipes 		= Cut Tire;
+							  Make Standard Tire (Performance);Make Standard Tire (Regular);Make Standard Tire (Valu);
+							  Make Heavy-Duty Tire (Performance);Make Heavy-Duty Tire (Regular);Make Heavy-Duty Tire (Valu);
+							  Make Sport Tire (Performance);Make Sport Tire (Regular);Make Sport Tire (Valu),
+		ReplaceOnUse    	= TireMag,
+		StaticModel			= DP.TireMag,
+		WorldStaticModel 	= DP.TireMag_Ground,
+	}
+
+	/************************Recipes************************/
+    recipe Cut Tire
+	{
+		OldTire1/NormalTire1/ModernTire1/OldTire2/NormalTire2/ModernTire2/OldTire3/NormalTire3/ModernTire3,
+		keep [Recipe.GetItemTypes.SharpKnife],
+		
+		Result 				: Rubber,
+		OnCreate			: Recipe.OnCreate.CheckTireCond,
+		AllowDestroyedItem  : true,
+		Sound 				: ClothesRipping,
+		Time 				: 100.0,
+		Category 			: Wheels,
+		AnimNode 			: RipSheets,
+		Prop1 				: HuntingKnife,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+/* ------------ Vehiculo STANDARD ------------ */
+	/* 			Calidad Performance 			*/
+    recipe Make Standard Tire (Performance)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+		Result 				: ModernTire1,
+		OnCreate			: Recipe.OnCreate.SetTireCondStandard,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+	/* 			Calidad Regular			*/
+    recipe Make Standard Tire (Regular)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+		Result 				: NormalTire1,
+		OnCreate			: Recipe.OnCreate.SetTireCondStandard,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+	/* 			Calidad Valu 			*/
+    recipe Make Standard Tire (Valu)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+
+		Result 				: OldTire2,
+		OnCreate			: Recipe.OnCreate.SetTireCondStandard,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+
+
+/* ----------- Vehiculo INDUSTRIAL ----------- */
+	/* 			Calidad Performance 			*/
+    recipe Make Heavy-Duty Tire (Performance)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+		Result 				: ModernTire2,
+		OnCreate			: Recipe.OnCreate.SetTireCondHeavyDuty,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+	/* 			Calidad Regular			*/
+    recipe Make Heavy-Duty Tire (Regular)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+		Result 				: NormalTire2,
+		OnCreate			: Recipe.OnCreate.SetTireCondHeavyDuty,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+	
+	/* 			Calidad Valu 			*/
+    recipe Make Heavy-Duty Tire (Valu)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+
+		Result 				: OldTire2,
+		OnCreate			: Recipe.OnCreate.SetTireCondHeavyDuty,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+/* ----------- Vehiculo DEPORTIVO ----------- */
+	/* 			Calidad Performance 			*/
+    recipe Make Sport Tire (Performance)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+		Result 				: ModernTire3,
+		OnCreate			: Recipe.OnCreate.SetTireCondHeavyDuty,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+	/* 			Calidad Regular			*/
+    recipe Make Sport Tire (Regular)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+		Result 				: NormalTire3,
+		OnCreate			: Recipe.OnCreate.SetTireCondHeavyDuty,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+	
+	/* 			Calidad Valu 			*/
+    recipe Make Sport Tire (Valu)
+	{
+		Rubber=2, Screws=4, SheetMetal,
+		BlowTorch=2,
+		keep LugWrench,
+		
+
+		Result 				: OldTire3,
+		OnCreate			: Recipe.OnCreate.SetTireCondHeavyDuty,
+		Time 				: 500.0,
+		Category 			: Wheels,
+		SkillRequired 		: Mechanics=1;MetalWelding=2,
+		OnGiveXP 			: Give10MWXP,
+		AnimNode 			: Craft,
+		Prop2				: LugWrench,
+		CanBeDoneFromFloor  : true,
+		NeedToBeLearn		: true,
+	}
+
+}

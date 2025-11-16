@@ -1,0 +1,11 @@
+Recipes_ES = {
+    Recipe_MakeStandardTireTier1    = "Crear Neumatico Estandar (Calidad Deportivo)",
+    Recipe_MakeStandardTireTier2    = "Crear Neumatico Estandar (Calidad Estandar)",
+    Recipe_MakeStandardTireTier3    = "Crear Neumatico Estandar (Calidad Economica)",
+    Recipe_MakeHeavy-DutyTireTier1  = "Crear Neumatico Industrial (Calidad Deportivo)",
+    Recipe_MakeHeavy-DutyTireTier2  = "Crear Neumatico Industrial (Calidad Estandar)",
+    Recipe_MakeHeavy-DutyTireTier3  = "Crear Neumatico Industrial (Calidad Economica)",
+    Recipe_MakeSportTireTier1       = "Crear Neumatico Deportivo (Calidad Deportivo)",
+    Recipe_MakeSportTireTier2       = "Crear Neumatico Deportivo (Calidad Estandar)",
+    Recipe_MakeSportTireTier3       = "Crear Neumatico Deportivo (Calidad Economica)",
+}

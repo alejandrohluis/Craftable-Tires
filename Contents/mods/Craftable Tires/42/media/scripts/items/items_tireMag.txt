@@ -1,0 +1,19 @@
+module DP
+{
+	item TireMag
+	{
+		DisplayName 	 	= How to Assemble Tires,
+		DisplayCategory 	= SkillBook,
+		Type 			 	= Literature,
+		Weight 			 	= 0.5,
+		Icon 			 	= TireMag,
+        BoredomChange		= -20,
+        StressChange		= -15,
+		TeachedRecipes 		= MakeStandardTireTier1;MakeStandardTireTier2;MakeStandardTireTier3;
+							  MakeHeavy-DutyTireTier1;MakeHeavy-DutyTireTier2;MakeHeavy-DutyTireTier3;
+							  MakeSportTireTier1;MakeSportTireTier2;MakeSportTireTier3,
+		StaticModel			= DP.TireMag,
+		WorldStaticModel 	= DP.TireMag_Ground,
+		Tags 				= Magazine,
+	}
+}

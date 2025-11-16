@@ -1,0 +1,4 @@
+ItemName_AR = {
+    ItemName_DP.Rubber = "Caucho",
+    ItemName_DP.TireMag = "Como armar ruedas",
+}

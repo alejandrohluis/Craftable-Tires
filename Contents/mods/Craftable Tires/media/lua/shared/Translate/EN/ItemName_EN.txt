@@ -1,0 +1,4 @@
+ItemName_AR = {
+    ItemName_DP.Rubber = "Rubber",
+    ItemName_DP.TireMag = "How to Assemble Tires",
+}

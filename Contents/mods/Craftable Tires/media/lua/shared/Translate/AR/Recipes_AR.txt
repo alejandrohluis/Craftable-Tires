@@ -1,0 +1,12 @@
+Recipes_AR = {
+    Recipe_Cut_Tire = "Cortar neumatico",
+    Recipe_Make_Standard_Tire_(Performance) = "Crear Rueda de auto Estandar (Calidad Deportivo)",
+    Recipe_Make_Standard_Tire_(Regular) = "Crear Rueda de auto Estandar (Calidad Normal)",
+    Recipe_Make_Standard_Tire_(Valu) = "Crear Rueda de auto Estandar (Calidad Economica)",
+    Recipe_Make_Heavy-Duty_Tire_(Performance) = "Crear Rueda de auto Comercial (Calidad Deportivo)",
+    Recipe_Make_Heavy-Duty_Tire_(Regular) = "Crear Rueda de auto Comercial (Calidad Normal)",
+    Recipe_Make_Heavy-Duty_Tire_(Valu) = "Crear Rueda de auto Comercial (Calidad Economica)",
+    Recipe_Make_Sport_Tire_(Performance) = "Crear Rueda de auto Deportivo (Calidad Deportivo)",
+    Recipe_Make_Sport_Tire_(Regular) =  "Crear Rueda de auto Deportivo (Calidad Normal)",
+    Recipe_Make_Sport_Tire_(Valu) = "Crear Rueda de auto Deportivo (Calidad Economica)",
+}

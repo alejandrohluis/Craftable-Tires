@@ -1,0 +1,12 @@
+Recipes_EN = {
+    Recipe_Cut_Tire = "Cut Tire",
+    Recipe_Make_Standard_Tire_(Performance) = "Make Standard Tire (Performance)",
+    Recipe_Make_Standard_Tire_(Regular) = "Make Standard Tire (Regular)",
+    Recipe_Make_Standard_Tire_(Valu) = "Make Standard Tire (Valu)",
+    Recipe_Make_Heavy-Duty_Tire_(Valu) = "Make Heavy-Duty Tire (Performance)",
+    Recipe_Make_Heavy-Duty_Tire_(Valu) = "Make Heavy-Duty Tire (Regular)",
+    Recipe_Make_Heavy-Duty_Tire_(Valu) = "Make Heavy-Duty Tire (Valu)",
+    Recipe_Make_Sport_Tire_(Performance) = "Make Sport Tire (Performance)",
+    Recipe_Make_Sport_Tire_(Regular) =  "Make Sport Tire (Regular)",
+    Recipe_Make_Sport_Tire_(Valu) = "Make Sport Tire (Valu)",
+}

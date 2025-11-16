@@ -1,0 +1,39 @@
+VERSION = 1,
+
+option CraftableTires.RandomizedQuality
+{
+    type = boolean,
+    default = true,
+    page = CraftableTires,
+    translation = CraftableTires_RandomizedQuality,
+}
+
+option CraftableTires.StartingCondition
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 10,
+    page = CraftableTires,
+    translation = CraftableTires_StartingCondition,
+}
+
+option CraftableTires.MechanicsLevelMultiplier
+{
+    type = integer,
+    min = 0,
+    max = 10,
+    default = 10,
+    page = CraftableTires,
+    translation = CraftableTires_MechanicsLevelMultiplier,
+}
+
+option CraftableTires.WeldingLevelMultiplier
+{
+    type = integer,
+    min = 0,
+    max = 10,
+    default = 4,
+    page = CraftableTires,
+    translation = CraftableTires_WeldingLevelMultiplier,
+}
