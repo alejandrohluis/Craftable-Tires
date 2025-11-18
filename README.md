@@ -1,6 +1,16 @@
 # Craftable Tires
 A mod for the game "Project Zomboid"
 
+### Links to my other Mods
+- Steam
+  - [Know Your Calories](https://steamcommunity.com/sharedfiles/filedetails/?id=3257953004)
+  - [Craftable Tires](https://steamcommunity.com/sharedfiles/filedetails/?id=3378303543)
+  - [[Reworked] Madax-Workshop Compatibility Patch](https://steamcommunity.com/sharedfiles/filedetails/?id=2942816020)
+
+- Github
+  - [Know Your Calories](https://github.com/alejandrohluis/Know-Your-Calories)
+  - [Craftable Tires](https://github.com/alejandrohluis/Craftable-Tires)
+
 ## Description:
 <h2> Renewable Tires! </h2>
 With this mod you will be able to rip tires to get rubber, which can be later used to craft tires from scratch.
@@ -34,11 +44,3 @@ Both the magazine which teaches how to craft the tires and rubber will be found 
 > <strike>Add a 3d model for the rubber item.</strike>
 
 > <strike>Add rubber to foraging zones to make tires an infinite resource.</strike>
-
-If you like the mod please consider dropping a rating and a favorite.
-![like and fav](https://i.imgur.com/31mCw6B.png/gif)
-
-Do not copy or reupload this mod. If you wish to add it to a modpack, use the Steam Collection feature.
-
-Workshop ID: 3378303543
-Mod ID: CraftableTires
