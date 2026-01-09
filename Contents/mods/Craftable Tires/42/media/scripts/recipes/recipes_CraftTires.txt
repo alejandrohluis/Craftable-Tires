@@ -12,7 +12,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondStandard,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondStandard,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -37,7 +37,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondStandard,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondStandard,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -62,7 +62,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondStandard,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondStandard,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -89,7 +89,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondHeavyDuty,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondHeavyDuty,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -114,7 +114,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondHeavyDuty,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondHeavyDuty,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -139,7 +139,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondHeavyDuty,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondHeavyDuty,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -166,7 +166,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondSport,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondSport,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -191,7 +191,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondSport,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondSport,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,
@@ -216,7 +216,7 @@ module DP
 		xpAward			= MetalWelding:10,
 		timedAction 	= Welding,
 		NeedToBeLearn	= true,
-		OnCreate		= Recipe.OnCreate.SetTireCondSport,
+		OnCreate		= RecipeCodeOnCreate.SetTireCondSport,
 		inputs
         {
             item 1 [Base.LugWrench] mode:keep,

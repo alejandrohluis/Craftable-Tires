@@ -1,11 +1,25 @@
 Sandbox_ES = {
     Sandbox_CraftableTires = "Craftable Tires",
-    Sandbox_CraftableTires_RandomizedQuality = "Calidad Variable de Ruedas Creadas",
-    Sandbox_CraftableTires_RandomizedQuality_tooltip = "Cuando esta activo, varia la calidad de la rueda crafteada por un pequeno porcentaje por crafteo",
     Sandbox_CraftableTires_StartingCondition = "Condicion Inicial de Ruedas Creadas",
     Sandbox_CraftableTires_StartingCondition_tooltip = "Ajusta la condicion base de una rueda al craftearla. Usar 100 para que siempre se cree con la calidad al maximo. La ecuacion es la siguiente:\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condicion = <RGB:0,1,0> Condicion Inicial <RGB:0.1,0.7,0.1> + (Nivel de Mecanica * Multiplicador) + (Nivel de Metalisteria * Multiplicador) <RGB:1,1,1>\n\n",
     Sandbox_CraftableTires_MechanicsLevelMultiplier = "Multiplicador de Nivel de Mecanica"
     Sandbox_CraftableTires_MechanicsLevelMultiplier_tooltip = "Multiplica el nivel de Mecanica del jugador por este numero para ajustar la condicion de la rueda creada. La ecuacion es la siguiente\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condicion = Condicion Inicial + <RGB:0,1,0> (Nivel de Mecanica * Multiplicador) <RGB:0.1,0.7,0.1> + (Nivel de Metalisteria * Multiplicador) <RGB:1,1,1>\n\n"
     Sandbox_CraftableTires_WeldingLevelMultiplier = "Multiplicador de Nivel de Metalisteria"
     Sandbox_CraftableTires_WeldingLevelMultiplier_tooltip = "Multiplica el nivel de Metalisteria del jugador por este numero para ajustar la condicion de la rueda creada. La ecuacion es la siguiente\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condicion = Condicion Inicial + (Nivel de Mecanica * Multiplicador) + <RGB:0,1,0> (Nivel de Metalisteria * Multiplicador) <RGB:1,1,1>\n\n"
+
+    Sandbox_CraftableTires_RandomizedQuality = "Calidad Variable de Ruedas Creadas",
+    Sandbox_CraftableTires_RandomizedQuality_tooltip = "Cuando esta activo, varia la calidad de la rueda crafteada por un pequeno porcentaje por crafteo",
+
+    Sandbox_CraftableTires_RandomHeavyDutyLow = "Calidad Reducida - Industrial",
+    Sandbox_CraftableTires_RandomHeavyDutyLow_tooltip = "Por cuanto se puede reducir la calidad de la rueda al tener activa la calidad variable",
+    Sandbox_CraftableTires_RandomHeavyDutyHigh = "Calidad Aumentada - Industrial",
+    Sandbox_CraftableTires_RandomHeavyDutyHigh_tooltip = "Por cuanto puede aumentar la calidad de la rueda al tener activa la calidad variable",
+    Sandbox_CraftableTires_RandomStandardLow = "Calidad Reducida - Estandar",
+    Sandbox_CraftableTires_RandomStandardLow_tooltip = "Por cuanto se puede reducir la calidad de la rueda al tener activa la calidad variable",
+    Sandbox_CraftableTires_RandomStandardHigh = "Calidad Aumentada - Estandar",
+    Sandbox_CraftableTires_RandomStandardHigh_tooltip = "Por cuanto puede aumentar la calidad de la rueda al tener activa la calidad variable",
+    Sandbox_CraftableTires_RandomSportLow = "Calidad Reducida - Deportivo",
+    Sandbox_CraftableTires_RandomSportLow_tooltip = "Por cuanto se puede reducir la calidad de la rueda al tener activa la calidad variable",
+    Sandbox_CraftableTires_RandomSportHigh = "Calidad Aumentada - Deportivo",
+    Sandbox_CraftableTires_RandomSportHigh_tooltip = "Por cuanto puede aumentar la calidad de la rueda al tener activa la calidad variable",
 }

@@ -1,36 +1,54 @@
-require "recipecode"
+local Recipe = RecipeCodeOnCreate
 
-local Recipe = Recipe
+local function getBaseTireCondition(p_player)
+    local player = p_player
+    local baseCondition = SandboxVars.CraftableTires.StartingCondition
+    local mechanicsModifier = player:getPerkLevel(Perks.Mechanics)*SandboxVars.CraftableTires.MechanicsLevelMultiplier
+    local metalweldingModifier = player:getPerkLevel(Perks.MetalWelding)*SandboxVars.CraftableTires.WeldingLevelMultiplier
 
-function Recipe.OnCreate.SetTireCondHeavyDuty(craftRecipeData, player)
-    local tireCondition = SandboxVars.CraftableTires.StartingCondition +
-                          player:getPerkLevel(Perks.Mechanics)*SandboxVars.CraftableTires.MechanicsLevelMultiplier +
-                          player:getPerkLevel(Perks.MetalWelding)*SandboxVars.CraftableTires.WeldingLevelMultiplier
-    if tireCondition >= 100 then tireCondition = 100 end
-    if SandboxVars.CraftableTires.RandomizedQuality then tireCondition = ZombRand(tireCondition - 4, tireCondition + 1) end
-    if tireCondition <= 0 then tireCondition = 0 end
+    local condition = baseCondition + mechanicsModifier + metalweldingModifier
+    return math.min(condition, 100)
+end
+
+local function randomizeTireCondition(tireCondition, deltaNegative, deltaPositive)
+    local minimumCondition = tireCondition - deltaNegative
+    local maximumCondition = tireCondition + deltaPositive
+    local randomizedCondition = ZombRand(minimumCondition, maximumCondition)
+    randomizedCondition = math.max(0, math.min(randomizedCondition, 100))
+    return randomizedCondition
+end
+
+-- recipe functions
+
+function Recipe.SetTireCondHeavyDuty(craftRecipeData, player)
+    local tireCondition = getBaseTireCondition(player)
+    if SandboxVars.CraftableTires.RandomizedQuality then
+        local minimumRandomCond = SandboxVars.CraftableTires.RandomHeavyDutyLow -- 4
+        local maximumRandomCond = SandboxVars.CraftableTires.RandomHeavyDutyHigh -- 1
+        tireCondition = randomizeTireCondition(tireCondition, minimumRandomCond, maximumRandomCond)
+    end
     local result = craftRecipeData:getAllCreatedItems():get(0)
     result:setCondition(tireCondition)
 end
 
-function Recipe.OnCreate.SetTireCondStandard(craftRecipeData, player)
-    local tireCondition = SandboxVars.CraftableTires.StartingCondition +
-                          player:getPerkLevel(Perks.Mechanics)*SandboxVars.CraftableTires.MechanicsLevelMultiplier +
-                          player:getPerkLevel(Perks.MetalWelding)*SandboxVars.CraftableTires.WeldingLevelMultiplier
-    if tireCondition >= 100 then tireCondition = 100 end
-    if SandboxVars.CraftableTires.RandomizedQuality then tireCondition = ZombRand(tireCondition - 9, tireCondition + 1) end
-    if tireCondition <= SandboxVars.CraftableTires.StartingCondition then tireCondition = SandboxVars.CraftableTires.StartingCondition end
+function Recipe.SetTireCondStandard(craftRecipeData, player)
+    local tireCondition = getBaseTireCondition(player)
+    if SandboxVars.CraftableTires.RandomizedQuality then
+        local minimumRandomCond = SandboxVars.CraftableTires.RandomStandardLow -- 5
+        local maximumRandomCond = SandboxVars.CraftableTires.RandomStandardHigh -- 5
+        tireCondition = randomizeTireCondition(tireCondition, minimumRandomCond, maximumRandomCond)
+    end
     local result = craftRecipeData:getAllCreatedItems():get(0)
     result:setCondition(tireCondition)
 end
 
-function Recipe.OnCreate.SetTireCondSport(craftRecipeData, player)
-    local tireCondition = SandboxVars.CraftableTires.StartingCondition +
-                          player:getPerkLevel(Perks.Mechanics)*SandboxVars.CraftableTires.MechanicsLevelMultiplier +
-                          player:getPerkLevel(Perks.MetalWelding)*SandboxVars.CraftableTires.WeldingLevelMultiplier
-    if tireCondition >= 100 then tireCondition = 100 end
-    if SandboxVars.CraftableTires.RandomizedQuality then tireCondition = ZombRand(tireCondition - 14, tireCondition + 1) end
-    if tireCondition <= SandboxVars.CraftableTires.StartingCondition then tireCondition = SandboxVars.CraftableTires.StartingCondition end
+function Recipe.SetTireCondSport(craftRecipeData, player)
+    local tireCondition = getBaseTireCondition(player)
+    if SandboxVars.CraftableTires.RandomizedQuality then
+        local minimumRandomCond = SandboxVars.CraftableTires.RandomSportLow -- 14
+        local maximumRandomCond = SandboxVars.CraftableTires.RandomSportHigh -- 1
+        tireCondition = randomizeTireCondition(tireCondition, minimumRandomCond, maximumRandomCond)
+    end
     local result = craftRecipeData:getAllCreatedItems():get(0)
     result:setCondition(tireCondition)
 end

@@ -1,11 +1,25 @@
 Sandbox_EN = {
     Sandbox_CraftableTires = "Craftable Tires",
-    Sandbox_CraftableTires_RandomizedQuality = "Crafted Tires Varying Quality",
-    Sandbox_CraftableTires_RandomizedQuality_tooltip = "When enabled, varies the quality on the crafted tires by a small margin per craft",
     Sandbox_CraftableTires_StartingCondition = "Crafted Tires Starting Condition",
     Sandbox_CraftableTires_StartingCondition_tooltip = "Sets the base condition a tire has when crafting. Set to 100 to make it so every crafted tire has max quality. The equation is the following:\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condition = <RGB:0,1,0> Start condition <RGB:0.1,0.7,0.1> + (Mechanics Level * Multiplier) + (welding Level * Multiplier) <RGB:1,1,1>\n\n",
-    Sandbox_CraftableTires_MechanicsLevelMultiplier = "Mechanics Level Condition Multiplier"
-    Sandbox_CraftableTires_MechanicsLevelMultiplier_tooltip = "Multiplies the player's mechanics level by this number to set the condition for the crafted wheel. The equation is the following:\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condition = Start condition + <RGB:0,1,0> (Mechanics Level * Multiplier) <RGB:0.1,0.7,0.1> + (welding Level * Multiplier) <RGB:1,1,1>\n\n"
-    Sandbox_CraftableTires_WeldingLevelMultiplier = "Welding Level Condition Multiplier"
-    Sandbox_CraftableTires_WeldingLevelMultiplier_tooltip = "Multiplies the player's welding level by this number to set the condition for the crafted wheel. The equation is the following:\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condition = Start condition + (Mechanics Level * Multiplier) + <RGB:0,1,0> (welding Level * Multiplier) <RGB:1,1,1>\n\n"
+    Sandbox_CraftableTires_MechanicsLevelMultiplier = "Mechanics Level Condition Multiplier",
+    Sandbox_CraftableTires_MechanicsLevelMultiplier_tooltip = "Multiplies the player's mechanics level by this number to set the condition for the crafted wheel. The equation is the following:\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condition = Start condition + <RGB:0,1,0> (Mechanics Level * Multiplier) <RGB:0.1,0.7,0.1> + (welding Level * Multiplier) <RGB:1,1,1>\n\n",
+    Sandbox_CraftableTires_WeldingLevelMultiplier = "Welding Level Condition Multiplier",
+    Sandbox_CraftableTires_WeldingLevelMultiplier_tooltip = "Multiplies the player's welding level by this number to set the condition for the crafted wheel. The equation is the following:\n\n <CENTRE> <RGB:0.1,0.7,0.1> Condition = Start condition + (Mechanics Level * Multiplier) + <RGB:0,1,0> (welding Level * Multiplier) <RGB:1,1,1>\n\n",
+    
+    Sandbox_CraftableTires_RandomizedQuality = "Crafted Tires Varying Quality",
+    Sandbox_CraftableTires_RandomizedQuality_tooltip = "When enabled, varies the quality on the crafted tires by a small margin per craft",
+    
+    Sandbox_CraftableTires_RandomHeavyDutyLow = "Random Quality Reduced - Heavy-Duty",
+    Sandbox_CraftableTires_RandomHeavyDutyLow_tooltip = "By how much the quality of the tire may be reduced when varying is enabled",
+    Sandbox_CraftableTires_RandomHeavyDutyHigh = "Random Quality Upgraded - Heavy-Duty",
+    Sandbox_CraftableTires_RandomHeavyDutyHigh_tooltip = "By how much the quality of the tire may be upgraded when varying is enabled",
+    Sandbox_CraftableTires_RandomStandardLow = "Random Quality Reduced - Standard",
+    Sandbox_CraftableTires_RandomStandardLow_tooltip = "By how much the quality of the tire may be reduced when varying is enabled",
+    Sandbox_CraftableTires_RandomStandardHigh = "Random Quality Upgraded - Standard",
+    Sandbox_CraftableTires_RandomStandardHigh_tooltip = "By how much the quality of the tire may be upgraded when varying is enabled",
+    Sandbox_CraftableTires_RandomSportLow = "Random Quality Reduced - Sport",
+    Sandbox_CraftableTires_RandomSportLow_tooltip = "By how much the quality of the tire may be reduced when varying is enabled",
+    Sandbox_CraftableTires_RandomSportHigh = "Random Quality Upgraded - Sport",
+    Sandbox_CraftableTires_RandomSportHigh_tooltip = "By how much the quality of the tire may be upgraded when varying is enabled",
 }

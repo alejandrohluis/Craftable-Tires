@@ -1,13 +1,5 @@
 VERSION = 1,
 
-option CraftableTires.RandomizedQuality
-{
-    type = boolean,
-    default = true,
-    page = CraftableTires,
-    translation = CraftableTires_RandomizedQuality,
-}
-
 option CraftableTires.StartingCondition
 {
     type = integer,
@@ -36,4 +28,72 @@ option CraftableTires.WeldingLevelMultiplier
     default = 4,
     page = CraftableTires,
     translation = CraftableTires_WeldingLevelMultiplier,
+}
+
+option CraftableTires.RandomizedQuality
+{
+    type = boolean,
+    default = true,
+    page = CraftableTires,
+    translation = CraftableTires_RandomizedQuality,
+}
+
+option CraftableTires.RandomHeavyDutyLow
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 4,
+    page = CraftableTires,
+    translation = CraftableTires_RandomHeavyDutyLow,
+}
+
+option CraftableTires.RandomHeavyDutyHigh
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 1,
+    page = CraftableTires,
+    translation = CraftableTires_RandomHeavyDutyHigh,
+}
+
+option CraftableTires.RandomStandardLow
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 5,
+    page = CraftableTires,
+    translation = CraftableTires_RandomStandardLow,
+}
+
+option CraftableTires.RandomStandardHigh
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 5,
+    page = CraftableTires,
+    translation = CraftableTires_RandomStandardHigh,
+}
+
+option CraftableTires.RandomSportLow
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 14,
+    page = CraftableTires,
+    translation = CraftableTires_RandomSportLow,
+}
+
+option CraftableTires.RandomSportHigh
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 1,
+    page = CraftableTires,
+    translation = CraftableTires_RandomSportHigh,
 }
