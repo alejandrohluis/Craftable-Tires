@@ -1,13 +1,16 @@
 require "TimedActions/ISBaseTimedAction"
+require "CraftableTires_TireUtils"
 
 ISDisassembleTireAction = ISBaseTimedAction:derive("ISDisassembleTireAction")
 
-function ISDisassembleTireAction:new(character, args)
+function ISDisassembleTireAction:new(character, args, isoObject)
     local o = ISBaseTimedAction.new(self, character)
 
     o.args = args
+    o.isoObject = isoObject
 
-    o.maxTime = 1
+    -- tiempo que tarda la accion en ticks
+    o.maxTime = 100
 
     o.stopOnWalk = true
     o.stopOnRun = true
@@ -16,45 +19,45 @@ function ISDisassembleTireAction:new(character, args)
 end
 
 function ISDisassembleTireAction:isValid()
-    return self.character ~= nil and self.args ~= nil
+    if not self.character or not self.args or not self.isoObject then return false end
+
+    local square = self.isoObject:getSquare()
+    if not square then return false end
+
+    local tireQuantity = CraftableTires.getTireAmountIn(self.isoObject)
+    if tireQuantity <= 0 then return false end
+    return true
 end
+
 function ISDisassembleTireAction:start()
+    self:setActionAnim("VehicleWorkOnTire")
+    -- self.sound = self.character:playSound("TakeWheel")
 end
+
 function ISDisassembleTireAction:update()
+    self.character:faceThisObject(self.isoObject)
 end
+
+-- function ISDisassembleTireAction:stop()
+--     if self.sound then
+--         self.character:stopOrTriggerSound(self.sound)
+--     end
+--     ISBaseTimedAction.stop(self)
+-- end
+
 function ISDisassembleTireAction:perform()
-    sendClientCommand(self.character, "DisassembleTire", "RemoveTile", self.args)
+    -- if self.sound then
+    --     self.character:stopOrTriggerSound(self.sound)
+    -- end
+    sendClientCommand(self.character, "CraftableTires", "DisassembleTire", self.args)
     ISBaseTimedAction.perform(self)
 end
 
 ------------------------
 
-local tireTiles = {
-    -- tires in texture:
-    -- one tire
-    { "location_business_machinery_01_48" , "location_business_machinery_01_49"},
-    -- two tires
-    { "location_business_machinery_01_40" , "location_business_machinery_01_41" , "location_business_machinery_01_50" },
-    -- three tires
-    { "location_business_machinery_01_42" , "location_business_machinery_01_43" , "location_business_machinery_01_51" },
-    -- four tires
-    { "location_business_machinery_01_44" , "location_business_machinery_01_45" , "location_business_machinery_01_52" },
-}
-
 local function hasTiresInTile(isoObject)
-    if not isoObject or not isoObject:getSprite() then return false end
-    local spriteName = isoObject:getSprite():getName()
-
-    for i = 1, #tireTiles do
-        local tireType = tireTiles[i]
-        for j = 1, #tireType do
-            local tire = tireType[j]
-            if spriteName == tire then
-                return true
-            end
-        end
-    end
-    return false
+    local tireQuantity = CraftableTires.getTireAmountIn(isoObject)
+    return tireQuantity > 0
 end
 
 local function onDisassembleTile(worldobjects, playerNum, isoObject)
@@ -73,7 +76,7 @@ local function onDisassembleTile(worldobjects, playerNum, isoObject)
         index = isoObject:getObjectIndex(),
     }
 
-    ISTimedActionQueue.add(ISDisassembleTireAction:new(player, args))
+    ISTimedActionQueue.add(ISDisassembleTireAction:new(player, args, isoObject))
 end
 
 local function DisassembleTireTilesContextMenu(playerNum, context, worldobjects, test)
