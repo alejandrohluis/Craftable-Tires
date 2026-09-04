@@ -1,14 +1,14 @@
 require "CraftableTires_TireUtils"
 
+-----------------------------------------------------------------
+---                     ATTENTION !                           ---
+--- if you are looking to make an addon or add compatibility, ---
+--- check out "CraftableTires_TireUtils.lua" in lua/shared !  ---
+-----------------------------------------------------------------
+
 local CraftableTiresCommands = {}
 
 CraftableTires = CraftableTires or {}
-
-local allTireType = {
-    "Base.OldTire1", "Base.NormalTire1", "Base.ModernTire1",
-    "Base.OldTire2", "Base.NormalTire2", "Base.ModernTire2",
-    "Base.OldTire3", "Base.NormalTire3", "Base.ModernTire3",
-}
 
 local function isPlayerClose(player, x, y, z)
     if not player then return false end
@@ -27,8 +27,10 @@ local function generateTires(amountOfTiresToGenerate)
     local generatedTires = {}
     local createItemMethod = instanceItem
     local randomNumberGenerator = ZombRand
+    local tireTypeList = CraftableTires.TireItemIDs
+    local tireTypeCount = #tireTypeList
     for i = 1, amountOfTiresToGenerate do
-        local tireType = allTireType[randomNumberGenerator(1, #allTireType + 1)]
+        local tireType = tireTypeList[randomNumberGenerator(1, tireTypeCount + 1)]
 
         local tire = createItemMethod(tireType)
 

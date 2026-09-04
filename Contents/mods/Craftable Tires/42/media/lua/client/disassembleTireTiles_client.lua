@@ -1,6 +1,12 @@
 require "TimedActions/ISBaseTimedAction"
 require "CraftableTires_TireUtils"
 
+-----------------------------------------------------------------
+---                     ATTENTION !                           ---
+--- if you are looking to make an addon or add compatibility, ---
+--- check out "CraftableTires_TireUtils.lua" in lua/shared !  ---
+-----------------------------------------------------------------
+
 ISDisassembleTireAction = ISBaseTimedAction:derive("ISDisassembleTireAction")
 
 function ISDisassembleTireAction:new(character, args, isoObject)
@@ -92,9 +98,23 @@ local function DisassembleTireTilesContextMenu(playerNum, context, worldobjects,
         end
     end
 
-    if clickedObject then
-        context:addOption("Disassemble", worldobjects, onDisassembleTile, playerNum, clickedObject)
+    if not clickedObject then return end
+
+    local disassembleLabel = getText("ContextMenu_Disassemble")
+    local existingDisassembleOption = context:getOptionFromName(disassembleLabel)
+    local subMenu = nil
+    if existingDisassembleOption then
+        -- if disassembling menu already exists, insert tire disassembling logic
+        subMenu = context:getSubMenu(existingDisassembleOption.subOption)
+    else
+        -- if disassembling menu doesn't exist, create it  (copied from ISDisassembleMenu.createMenu in ISDisassembleMenu.lua)
+        local disassembleMenu = context:addOption(disassembleLabel, playerNum, nil)
+        disassembleMenu.iconTexture = getTexture("Item_Hammer")
+
+        subMenu = ISContextMenu:getNew(context)
+        context:addSubMenu(disassembleMenu, subMenu)
     end
+    subMenu:addOption(getText("IGUI_CraftableTires_TireTile"), worldobjects, onDisassembleTile, playerNum, clickedObject)
 end
 
 Events.OnFillWorldObjectContextMenu.Add(DisassembleTireTilesContextMenu)
