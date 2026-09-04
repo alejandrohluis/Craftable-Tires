@@ -63,6 +63,7 @@ local function validArgs(args)
 end
 
 CraftableTiresCommands.DisassembleTire = function(player, args)
+    if not SandboxVars.CraftableTires.AllowDismantlingTireStacks then return end
     if not validArgs(args) then return end
 
     if not isPlayerClose(player, args.x, args.y, args.z) then return end

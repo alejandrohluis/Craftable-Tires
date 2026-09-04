@@ -1,5 +1,13 @@
 VERSION = 1,
 
+option CraftableTires.AllowDismantlingTireStacks
+{
+    type = boolean,
+    default = true,
+    page = CraftableTires,
+    translation = CraftableTires_AllowDismantlingTireStacks,
+}
+
 option CraftableTires.StartingCondition
 {
     type = integer,

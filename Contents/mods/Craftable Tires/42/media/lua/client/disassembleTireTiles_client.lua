@@ -87,6 +87,9 @@ end
 
 local function DisassembleTireTilesContextMenu(playerNum, context, worldobjects, test)
     if test then return end
+    if not SandboxVars.CraftableTires.AllowDismantlingTireStacks then
+        return
+    end
 
     local clickedObject = nil
 
